@@ -26,19 +26,19 @@ body {
     float: left;    
 }
 
-#headline h1{
+#headline h1 {
     margin-top: 20px;
     margin-bottom: 40px;
-   font-size: 3vw;
+    font-size: 3vw;
     font-weight: bold;        
 }
 
-#headline p{
+#headline p {
     margin-bottom: 30px;
     color: black;
 }
 
-#headline a{
+#headline a {
     margin-top: 20px;
     color: #000000;
     text-decoration: underline lightblue 10px;  
@@ -47,6 +47,7 @@ body {
 #portrait {
     width: 65%;
     height: 100vh;
+    
     border-left: 15px solid lightblue; 
     display: inline; 
     float: right;   
@@ -71,9 +72,9 @@ body {
     border-bottom: 0px;
     
     background-color: whitesmoke;
-    
     display: inline-block;     
 }
+
 /* Design Feed Boxes */   
 .feed {
     width: 30%;
@@ -122,6 +123,10 @@ body {
     background: lightblue;
 }
 
+.mobile-button {
+    display: none;
+}
+
 /* Styling rss2html */
 .rss2html-embed-item-title a {
     color: #000000;
@@ -154,7 +159,6 @@ h2.rss2html-embed-item-title{
     padding-left: 20px;
     padding-right: 20px;
 
-    
     background-color: lightblue;   
 }
 
@@ -197,11 +201,13 @@ h2.rss2html-embed-item-title{
     text-decoration: none;
     margin-bottom: 30px;
 }
+img.Anzeiger-footer {
+    margin-left: 40%; 
+    width: 20%;
+}
+/*End Credits */
 
-
-
-
-
+/*Start Preload */
 #loader {
 width: 100%;
 height: 100vh;     

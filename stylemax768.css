@@ -123,6 +123,7 @@
     background-color: whitesmoke;   
     text-align: center;
     line-height: 2em; 
+    color: black;    
     text-decoration-color: #000;
     text-decoration: underline lightblue 5px;   
     }
@@ -166,13 +167,14 @@
     
 .right ul {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     }    
 
 .right li {
     list-style: none;
     display: inline;
     margin-bottom: 5px;
+    overflow: hidden;
 }
 
 .footer-column a { 

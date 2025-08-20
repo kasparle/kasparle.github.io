@@ -16,7 +16,9 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rss-parser/3.9.0/rss-parser.min.js"></script>
-
+    <script src="js/feedloaderFahrgastfernsehen.js" defer></script>
+    <script src="js/feedloaderRadioHannover.js" defer></script>
+    <script src="js/feedloaderHAZ.js" defer></script>
 	<title> Nachrichtentisch Hannover</title>
     
 </head>
@@ -63,22 +65,22 @@
     
         <div id="HAZ" class="feed">
             <h3>HAZ</h3>
-            <a href="https://www.haz.de/lokales/hannover/"><img src="img/Logos/01_logo_HAZ_sw.png"></a>
-            <script src="https://embeds.rss2html.net/embed.js?url=https%3A%2F%2Fwww.haz.de%2Farc%2Foutboundfeeds%2Frss%2Ftags_slug%2Fhannover%2F&amp;feed_render_image=0&amp;feed_render_description=0&amp;item_count=5"></script>
+            <a href="https://www.haz.de/lokales/hannover/"><img src="img/Logos/01_logo_HAZ_sw.png" onmouseover="this.src='img/Logos/01_logo_HAZ.png';" onmouseout="this.src='img/Logos/01_logo_HAZ_sw.png';"></a>
+            <ul id="feedHAZ"></ul>
         </div>
         
         <div class="mobile-button">
-        <a href="#NP" class="mobile-button">Nächster Feed</a>
+            <a href="#NP" class="mobile-button">Nächster Feed</a>
         </div>
         
         <div id="NP" class="feed">
             <h3>Neue Presse</h3>
-            <a href="https://www.neuepresse.de/lokales/hannover/"><img src="img/Logos/02_logo_NP_sw.png"></a> 
+            <a href="https://www.neuepresse.de/lokales/hannover/"><img src="img/Logos/02_logo_NP_sw.png" onmouseover="this.src='img/Logos/02_logo_NP.png';" onmouseout="this.src='img/Logos/02_logo_NP_sw.png';"></a> 
             <script src="https://embeds.rss2html.net/embed.js?url=https%3A%2F%2Fwww.neuepresse.de%2Farc%2Foutboundfeeds%2Frss%2Fcategory%2Flokales%2Fhannover%2F&amp;feed_render_image=0&amp;feed_render_description=0&amp;item_count=5"></script>    
         </div> 
     
         <div class="mobile-button">
-        <a href="#NDRNDS" class="mobile-button">Nächster Feed</a>
+            <a href="#NDRNDS" class="mobile-button">Nächster Feed</a>
         </div>
         
         <div id="NDRNDS" class="feed">
@@ -87,109 +89,107 @@
             <script src="https://embeds.rss2html.net/embed.js?url=https%3A%2F%2Fwww.ndr.de%2Fnachrichten%2Fniedersachsen%2Findex-rss.xml&amp;embed_render_title=0&amp;feed_render_image=0&amp;feed_render_description=0&amp;item_count=5"></script>
         </div>
         
-       <div class="mobile-button">
-        <a href="#Sat1" class="mobile-button">Nächster Feed</a>
+        <div class="mobile-button">
+            <a href="#Sat1" class="mobile-button">Nächster Feed</a>
         </div>
         
         <div id="Sat1" class="feed">
-        <h3>dpa Niedersachsen</h3>
-        <a href="https://www.sat1regional.de/newsticker/region/niedersachsen-und-bremen/"><img src="img/Logos/13_logo_dpa_sw.png"></a> 
-        <script src="https://embeds.rss2html.net/embed.js?url=https%3A%2F%2Fwww.sat1regional.de%2Fnewsticker%2Fregion%2Fniedersachsen-und-bremen%2Ffeed%2F&amp;feed_render_image=0&amp;feed_render_description=0&amp;item_count=5"></script>   
+            <h3>dpa Niedersachsen</h3>
+            <a href="https://www.sat1regional.de/newsticker/region/niedersachsen-und-bremen/"><img src="img/Logos/04_logo_dpa_sw.png" onmouseover="this.src='img/Logos/04_logo_dpa.png';" onmouseout="this.src='img/Logos/04_logo_dpa_sw.png';"></a> 
+            <script src="https://embeds.rss2html.net/embed.js?url=https%3A%2F%2Fwww.sat1regional.de%2Fnewsticker%2Fregion%2Fniedersachsen-und-bremen%2Ffeed%2F&amp;feed_render_image=0&amp;feed_render_description=0&amp;item_count=5"></script>   
+        </div>
+       
+        <div class="mobile-button">
+            <a href="#dieZeit" class="mobile-button">Nächster Feed</a>
         </div>
         
+        <div id="dieZeit" class="feed">
+            <h3>Die ZEIT (dpa-Kanal)</h3>
+            <a href="https://www.zeit.de/thema/hannover"><img src="img/Logos/05_logo_Die-Zeit_sw.webp"></a>   
+            <script src="https://embeds.rss2html.net/embed.js?url=https%3A%2F%2Fnewsfeed.zeit.de%2Fthema%2Fhannover&amp;feed_render_image=0&amp;feed_render_link=0&amp;item_count=5"></script>
+        </div> 
+        
         <div class="mobile-button">
-        <a href="#RadioH" class="mobile-button">Nächster Feed</a>
+            <a href="#t-online" class="mobile-button">Nächster Feed</a>
+        </div>
+    
+        <div id="t-online" class="feed">
+            <h3>t-online</h3>
+            <a href="https://www.t-online.de/region/hannover/schlagzeilen/"><img src="img/Logos/06_logo_t-online_sw.png" style="margin-top: 5px;" onmouseover="this.src='img/Logos/06_logo_t-online.png';" onmouseout="this.src='img/Logos/06_logo_t-online_sw.png';"></a>   
+            <script src="https://embeds.rss2html.net/embed.js?url=https%3A%2F%2Fwww.t-online.de%2Fregion%2Fhannover%2Fschlagzeilen%2Ffeed.rss&amp;feed_render_image=0&amp;feed_render_link=0&amp;item_count=5"></script>
+        </div> 
+        
+        <div class="mobile-button">
+            <a href="#RadioH" class="mobile-button">Nächster Feed</a>
         </div>
     
         <div id="RadioH" class="feed">
             <h3>Radio Hannover</h3>
-            <a href="https://radio-hannover.de/"><img src="img/Logos/04_logo_Radio_Hannover_sw.png"></a>   
-           <script src="https://embeds.rss2html.net/embed.js?url=https%3A%2F%2Frssproxy.migor.org%2Fapi%2Ftf%3Furl%3Dhttps%253A%252F%252Fwww.radio-hannover.de%252Fhannover-news%253Fformat%253Dfeed%2526type%253Drss%26re%3Dnone%26out%3Datom&amp;feed_render_image=0&amp;feed_render_description=0&amp;item_count=5"></script>
+            <a href="https://radio-hannover.de/"><img src="img/Logos/07_logo_Radio_Hannover_sw.png" onmouseover="this.src='img/Logos/07_logo_Radio_Hannover.png';" onmouseout="this.src='img/Logos/07_logo_Radio_Hannover_sw.png';"></a>   
+            <!--script src="https://embeds.rss2html.net/embed.js?url=https%3A%2F%2Frssproxy.migor.org%2Fapi%2Ftf%3Furl%3Dhttps%253A%252F%252Fwww.radio-hannover.de%252Fhannover-news%253Fformat%253Dfeed%2526type%253Drss%26re%3Dnone%26out%3Datom&amp;feed_render_image=0&amp;feed_render_description=0&amp;item_count=5"></script-->
+            <ul id="news-feed"></ul>
         </div>  
-    
-        <!--div class="mobile-button">
-        <a href="#AN" class="mobile-button">Nächster Feed</a>
-        </div>
-        
-        <div id="AN" class="feed">
-            <h3>Antenne Niedersachsen</h3>
-            <a href="https://www.antenne.com/niedersachsen/regionalnachrichten/"><img src="img/Logos/05_logo_Antenne_NDS_sw.png"></a>   
-            <script src="https://embeds.rss2html.net/embed.js?url=https%3A%2F%2Fwww.antenne.com%2Frss.xml&amp;feed_render_image=0&amp;feed_render_description=0&amp;item_count=5"></script>
-        </div!--> 
-        
+
         <div class="mobile-button">
-        <a href="#h1" class="mobile-button">Nächster Feed</a>
+            <a href="#FF" class="mobile-button">Nächster Feed</a>
+        </div>
+       
+        <div id="FF" class="feed">
+            <h3>Das Fahrgastfernsehen</h3>
+            <a href="https://www.fahrgastfernsehen.city"><img src="img/Logos/08_logo_Fahrgastfernsehen_sw.png" onmouseover="this.src='img/Logos/08_logo_Fahrgastfernsehen.png';" onmouseout="this.src='img/Logos/08_logo_Fahrgastfernsehen_sw.png';"></a>   
+            <ul id="rss-feed"></ul>
+        </div>
+    
+        <div class="mobile-button">
+            <a href="#h1" class="mobile-button">Nächster Feed</a>
         </div>
        
         <div id="h1" class="feed">
             <h3>h1 Fernsehen</h3>
-            <a href="https://h-eins.tv/"><img src="img/Logos/06_logo_h1_sw.png"></a>   
+            <a href="https://h-eins.tv/"><img src="img/Logos/09_logo_h1_sw.png" onmouseover="this.src='img/Logos/09_logo_h1.png';" onmouseout="this.src='img/Logos/09_logo_h1_sw.png';"></a>   
             <script src="https://embeds.rss2html.net/embed.js?url=https%3A%2F%2Fwww.youtube.com%2Ffeeds%2Fvideos.xml%3Fchannel_id%3DUCMYUjTwY__6VoXfWl8tcDXQ+&amp;embed_render_title=0&amp;feed_render_image=0&amp;feed_render_description=0&amp;item_count=5"></script>
         </div> 
         
         <div class="mobile-button">
-        <a href="#LHH" class="mobile-button">Nächster Feed</a>
+            <a href="#LHH" class="mobile-button">Nächster Feed</a>
         </div>
         
         <div id="LHH" class="feed">
             <h3>LHH Pressemitteilungen</h3>
-            <a href="https://presse.hannover-stadt.de/index.cfm?page=1"><img src="img/Logos/07_logo_LHH_sw.png"></a>   
-            <script src="https://embeds.rss2html.net/embed.js?url=https%3A%2F%2Frssproxy.migor.org%2Fapi%2Fw2f%3Fv%3D0.1%26url%3Dhttps%253A%252F%252Fpresse.hannover-stadt.de%252Findex.cfm%253Fpage%253D1%26link%3D.%252Fh2%255B1%255D%252Fa%255B1%255D%26context%3D%252F%252Fdiv%255B1%255D%252Fdiv%255B1%255D%252Fdiv%255B3%255D%252Ful%255B1%255D%252Fli%26re%3Dnone%26out%3Datom&amp;feed_render_image=0&amp;feed_render_description=0&amp;item_count=5"></script>
+            <a href="https://presse.hannover-stadt.de/index.cfm?page=1"><img src="img/Logos/10_logo_LHH_sw.png" onmouseover="this.src='img/Logos/10_logo_LHH.png';" onmouseout="this.src='img/Logos/10_logo_LHH_sw.png';"></a>   
+            <script src="https://embeds.rss2html.net/embed.js?url=https%3A%2F%2Fapi.feedless.org%2Fstream%2Fbucket%2F875ee0bc-d564-48e0-80bc-43b145bffcf3%2Fatom&amp;feed_render_image=0&amp;feed_render_description=0&amp;item_count=5"></script>
         </div>
         
         <div class="mobile-button">
-        <a href="#RegionH" class="mobile-button">Nächster Feed</a>
+            <a href="#RegionH" class="mobile-button">Nächster Feed</a>
         </div>
        
         <div id="RegionH" class="feed">
             <h3>Region Hannover Pressebox</h3>
-            <a href="https://www.pressebox.de/newsroom/region-hannover/pressemitteilungen"><img src="img/Logos/08_logo_Region_Hannover_sw.png"></a>   
+            <a href="https://www.pressebox.de/newsroom/region-hannover/pressemitteilungen"><img src="img/Logos/11_logo_Region_Hannover_sw.png" onmouseover="this.src='img/Logos/11_logo_Region_Hannover.png';" onmouseout="this.src='img/Logos/11_logo_Region_Hannover_sw.png';"></a>   
             <script src="https://embeds.rss2html.net/embed.js?url=https%3A%2F%2Fwww.pressebox.de%2Frss%2Fpressemitteilungen%2Fnewsroom%2Fregion-hannover&amp;embed_render_title=0&amp;feed_render_image=0&amp;feed_render_description=0&amp;item_count=5"></script>
         </div>
         
-        <!--div class="mobile-button">
-        <a href="#LN" class="mobile-button">Nächster Feed</a>
-        </div!-->
-       
-        <div id="LN" class="feed">
-            <h3>Land Niedersachsen</h3>
-            <a href="https://www.niedersachsen.de/startseite/service/presse/presseinformationen/"><img src="img/Logos/09_logo_NDS_sw.png"></a>   
-            <script src="https://embeds.rss2html.net/embed.js?url=https%3A%2F%2Fwww.niedersachsen.de%2Frss.php&amp;embed_render_title=0&amp;feed_render_image=0&amp;feed_render_description=0&amp;item_count=5"></script>
-        </div>
-        
         <div class="mobile-button">
-        <a href="#PD" class="mobile-button">Nächster Feed</a>
+            <a href="#PD" class="mobile-button">Nächster Feed</a>
         </div>
             
         <div id="PD" class="feed">
             <h3>Polizeidirektion Hannover</h3>
-            <a href="https://www.presseportal.de/blaulicht/nr/66841"><img src="img/Logos/10_logo_POL-H_sw.png"></a>
+            <a href="https://www.presseportal.de/blaulicht/nr/66841"><img src="img/Logos/12_logo_POL-H_sw.png" onmouseover="this.src='img/Logos/12_logo_POL-H.png';" onmouseout="this.src='img/Logos/12_logo_POL-H_sw.png';"></a>
             <script src="https://embeds.rss2html.net/embed.js?url=https%3A%2F%2Fwww.presseportal.de%2Frss%2Fdienststelle_66841.rss2&amp;embed_render_title=0&amp;feed_render_image=0&amp;feed_render_description=0&amp;item_count=5"></script>
-           
         </div>
         
-        <div class="mobile-button">
-        <a href="#üstra" class="mobile-button">Nächster Feed</a>
+        <!--div class="mobile-button">
+            <a href="#AN" class="mobile-button">Nächster Feed</a>
         </div>
         
-        <div id="üstra" class="feed">
-            <h3>Verkehrsmeldungen üstra</h3>
-            <img src="img/Logos/11_logo_%C3%9CSTRA_sw.png">   
-            <a class="twitter-timeline" data-lang="de" data-theme="light" data-tweet-limit="5" href="https://twitter.com/uestra?ref_src=twsrc%5Etfw" data-chrome="noheader noborders">Verkehrsmeldungen üstra</a> 
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div> 
-        
-        <div class="mobile-button">
-        <a href="#DB" class="mobile-button">Nächster Feed</a>
-        </div>
-    
-        <div id="DB" class="feed">
-            <h3>Verkehrsmeldungen DB </h3>
-            <img src="img/Logos/12_logo_DB_sw.png">   
-            <a class="twitter-timeline" data-lang="de" data-theme="light" href="https://twitter.com/DBRegio_NDS?ref_src=twsrc%5Etfw" data-chrome="noheader noborders" data-tweet-limit="5">Tweets by DBRegio_NDS</a> 
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div> 
-        
+        <div id="AN" class="feed">
+            <h3>Antenne Niedersachsen</h3>
+            <a href="https://www.antenne.com/niedersachsen/regionalnachrichten/"><img src="img/Logos/13_logo_Antenne_NDS_sw.png"></a>   
+            <script src="https://embeds.rss2html.net/embed.js?url=https%3A%2F%2Fwww.antenne.com%2Frss.xml&amp;feed_render_image=0&amp;feed_render_description=0&amp;item_count=5"></script>
+        <div--> 
+         
     </div>
     
 <!--- Credits--->
@@ -213,11 +213,11 @@
 </body>
 
 <footer>
-    <script>
+ <script>
         $(document).ready(function() {
         window.onload = function () {
         $('#loader').fadeOut(500, function(){ $('#loader').remove(); } ) ;}});
-    </script>    
+    </script>     
 </footer>
     
 </html>    

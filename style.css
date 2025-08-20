@@ -102,7 +102,8 @@ body {
 }
 
 .feed img{
-    height: 50px;
+    max-height: 50px;
+    max-width: 100px;
     
     display: inline;
     float: right;
@@ -138,6 +139,7 @@ h2.rss2html-embed-item-title{
     font-size: 1em;
 }
 
+
 .rss2html-embed-item-body {
     display: none;
 }
@@ -149,6 +151,32 @@ h2.rss2html-embed-item-title{
 .rss2html-embed-feed-description {
     display: none;
 }
+
+/*Styling <ul> from script*/
+.feed ul {
+    list-style: none;
+    padding: 0;
+    padding-top: 1em;
+}
+
+.feed li {
+    font-size: 1em;
+    margin-bottom: 0.6em;
+}
+
+.feed li a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+}
+
+.feed em {
+    display: block;   /* sorgt für Zeilenumbruch */
+    margin-top: 0.2em;
+    font-style: normal;
+  }
+
+
 
 /* End Newsdesk */
 

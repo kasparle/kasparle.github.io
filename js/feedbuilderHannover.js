@@ -85,7 +85,7 @@ function renderListItem(title, description, pubDate, link) {
 }
 
 // 🔹 Dein Node.js-Server (z. B. Render, Railway, etc.)
-const proxyBase = "http://localhost:3000/proxy?url=";
+const proxyBase = "https://kasparle-github-io.onrender.com/proxy?url=";
 
 async function loadFeed(feedUrl) {
   const isHaz = feedUrl.includes("haz.de");
@@ -192,3 +192,4 @@ feedButtons.forEach(btn => {
 
 // Standard-Feed laden
 loadFeed(feedButtons[0].dataset.feed);
+

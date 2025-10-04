@@ -1,0 +1,11 @@
+Was ist der Nachrichtentisch Hannover?
+Der Nachrichtentisch Hannover ist ein nichtkommerzielles Webprojekt, das die Newsfeeds lokaler Medienangebote auf einer Seite zusammenführt. Nach dem Vorbild nachrichtentisch.de von Peter Tomuscheit nutzt der Nachrichtentisch Hannover rss-Feeds, um aktuelle Meldungen zu sortieren und anzuzeigen. Der Nachrichtentisch Hannover versteht sich als virtueller Pressespiegel: Ein Feedreader, der Journalist*innen bei der Einordnung und Auswahl von Meldungen helfen soll.
+
+Wie es funktioniert
+Das Projekt basiert auf html, css und JavaScript. Mithilfe von node.js werden die rss-Feeds der ausgewählten Newsangebote (z.B. t-online.de/region/hannover) aufgerufen. Je nach Angebot filtert eine LoadFeed()-Funktion lokale Meldungen aus der Stadt oder dem Umland aus dem rss-Feed heraus. Bei Newsseiten, die nicht über einen eigenen rss-Feed verfügen, werden bestehende Elemente via DOMParser gescraped und der extrahierte Inhalte aufgelistet. Für die Darstellung auf der Website habe ich Variablen für den jeweiligen Titel, das Veröffentlichungsdatum und die Beschreibung und den Link zur Meldung angelegt. Diese werden im html als <li>-, <h2>-, <a>- und <p>-Tags angezeigt.
+
+Aktualität
+Die rss-Feeds werden über das Script bei jedem Neuladen der Seite von den jeweiligen Servern der Medienangebote abgerufen. Nach 5 Minuten erfolgt ein Reload der Seite. Davor können die einzelnen Feeds manuell per Klick auf den dazugehörenden Button neu geladen werden (es sind zwei Klicks nötig: einer zur Auswahl, einer zum Neuladen). Der Nachrichtentisch Hannover bleit von der Aktualisierung der rss-Feeds selbst abhängig. Werden veröffentlichte Meldungen nicht oder erst später im rss-Feed dokumentiert, können sie auch nicht auf dem Nachrichtentisch angezeigt werden.
+
+Urheberrecht
+

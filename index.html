@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nachrichtentisch Hannover - lokale Schlagzeilen auf einen Blick" />
+  <meta name="author" content="Nachrichtentisch Hannover"/>
+  
+  <title>Nachrichtentisch Hannover</title>
+  
+  <link href="img/Anzeigerhochhaus.png" rel="icon" type="image/x-icon" />
+ 
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,300&family=Space+Mono&display=swap" rel="stylesheet">
+  
+  <script src="js/preload.js"></script>
+  <script src="js/feedbuilderHannover.js" defer></script> 
+</head>
+<body>
+  
+  <div id="header">
+    <a href="index.html"><img id="header-logo" src="img/Anzeigerhochhaus.png"/></a>
+    <div id="header-text">
+      <h1>Nachrichtentisch Hannover</h1>
+      <h3>aus der Stadt</h3>
+    </div>
+  </div>
+  
+  <div id="container">
+    <!-- Linke Spalte: Feed-Auswahl -->
+    <div class="feed-menu">
+      <h2>Feeds</h2>
+      <button data-feed="https://www.haz.de/arc/outboundfeeds/rss/" class="active">HAZ</button>
+      <button data-feed="https://www.neuepresse.de/arc/outboundfeeds/rss/category/lokales/hannover/">Neue Presse</button>
+      <button data-feed="https://www.ndr.de/nachrichten/niedersachsen/index~rss2.xml">NDR Niedersachsen</button>
+      <button data-feed="https://radio-hannover.de/aktuell/news">Radio Hannover</button>
+      <button data-feed="https://api.fahrgastfernsehen.online/wp-json/uestra/v9/entry/start/de">Fahrgastfernsehen</button>
+      <button data-feed="https://www.sat1regional.de/newsticker/region/niedersachsen-und-bremen/feed/">dpa (lni)</button>
+      <button data-feed="https://newsfeed.zeit.de/thema/hannover">Die ZEIT</button>
+      <button data-feed="https://www.t-online.de/region/hannover/feed.rss">T-Online</button>
+      
+      
+      <div class="menu-footer">
+        <p class="credits" id="c01"><a href="Umland.html">Feeds aus dem Umland</a></p>
+        <p class="credits" id="c02"><a href="https://kasparspricht.de/imprint.html">Impressum</a></p>
+        <p class="credits" id="c03"><a href="documentation.html">Doc</a></p>
+      
+      </div>
+     
+    </div>
+
+    <!-- Mittlere Spalte: Liste -->
+    <div class="feed-list">
+      <div id="feed-header">
+        <img id="feed-logo" src="" alt="Feed Logo" max-width="100px" max-height="50px" />
+      </div>
+      <ul id="news-list"></ul>
+    </div>
+
+    <!-- Rechte Spalte: Details -->
+    <div class="feed-details" id="details">
+      <p class="placeholder">Wähle eine Überschrift, um die Beschreibung zu sehen.</p>
+    </div>
+    
+  </div>
+</body>
+</html>

@@ -5,7 +5,7 @@ const feedLogo = document.getElementById('feed-logo');
 let currentActiveLi = null;
 
 // Variable Proxy-Server
-const PROXY_BASE = "https://kasparle-github-io.onrender.com/proxy?url=";
+const PROXY_BASE = "https://kasparle-github-io.onrender.com";
 
 function absolutize(href) {
   if (!href) return null;
@@ -171,3 +171,4 @@ feedButtons.forEach(btn => {
 
 // Standard-Feed beim Start laden
 loadFeed(feedButtons[0].dataset.feed);
+

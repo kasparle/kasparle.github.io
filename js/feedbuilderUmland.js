@@ -5,7 +5,7 @@ const feedLogo = document.getElementById('feed-logo');
 let currentActiveLi = null;
 
 // Variable Proxy-Server
-const PROXY_BASE = "https://kasparle-github-io.onrender.com";
+const PROXY_BASE = " https://nachrichtentisch-proxy.kawei.workers.dev";
 
 function absolutize(href) {
   if (!href) return null;
@@ -90,7 +90,7 @@ async function loadFeed(feedUrl) {
   updateLogo(feedUrl);
 
   // ✅ Der Proxy-Call geht jetzt über deinen Render-Server
-  const proxyUrl = `${PROXY_BASE}/proxy?url=${encodeURIComponent(feedUrl)}`;
+  const proxyUrl = `${PROXY_BASE}/?url=${encodeURIComponent(feedUrl)}`;
 
   list.innerHTML = '<li class="placeholder">⏳ Lade Feed...</li>';
   details.innerHTML = '<p class="placeholder">Wähle eine Überschrift, um die Beschreibung zu sehen.</p>';
@@ -171,4 +171,5 @@ feedButtons.forEach(btn => {
 
 // Standard-Feed beim Start laden
 loadFeed(feedButtons[0].dataset.feed);
+
 

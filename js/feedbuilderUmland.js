@@ -117,8 +117,16 @@ async function loadFeed(feedUrl) {
         const dateEl = item.querySelector('.add-info');
         if (!titleEl || !dateEl) return;
 
-        const link = absolutize(titleEl.getAttribute('href'));
+        
         const title = titleEl.textContent.trim();
+         // 👉 Filter für "leere" / unerwünschte Titel
+        if (
+            title.toLowerCase() === 'nachricht' ||
+            title.toLowerCase() === 'archiv nachricht'
+          ) {
+            return; // überspringen
+            }
+        const link = absolutize(titleEl.getAttribute('href'));
         const description = descriptionEl?.textContent.trim() || '';
         const pubDate = dateEl.textContent.trim();
         list.appendChild(renderListItem(title, description, pubDate, link));

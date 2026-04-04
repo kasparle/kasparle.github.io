@@ -111,7 +111,7 @@ async function loadFeed(feedUrl) {
       }
 
       list.innerHTML = '';
-      items.slice(0, 10).forEach(item => {
+      items.slice(0, 20).forEach(item => {
         const titleEl = item.querySelector('span.result-title a');
         const descriptionEl = item.querySelector('span.result-teaser');
         const dateEl = item.querySelector('.add-info');

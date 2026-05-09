@@ -1,0 +1,534 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  background: #f8f9fa;
+}
+
+#header {
+  width: 100%;
+  padding: 10px 0 20px 0;
+  background-color: #f8f9fa;
+  border-bottom: 5px solid #004080;
+
+  display: flex;
+  align-items: center;   
+  justify-content: center; 
+  position: relative;    
+}
+
+#header-logo {
+  height: 80px;
+  position: absolute;
+  top: 10px;
+  left: 10px; 
+}
+
+#header-text {
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  padding: 10px 0;
+  color: black;
+}
+
+h3 {
+  margin: 0;
+  color: black;
+  font-weight: 200;
+}
+
+
+
+
+    #container {
+      display: flex;
+      height: calc(100vh - 118px);
+      position: absolute;
+    }
+
+    /* Linke Spalte: Feed-Auswahl */
+    .feed-menu {
+      flex: 0 0 200px;
+      border-right: 1px solid #ccc;
+      background: #fafafa;
+      padding: 10px;
+    }
+
+    .feed-menu h2 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .feed-menu button {
+      display: block;
+      width: fit-content;
+      padding: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-bottom: 8px;
+      border: 0.5px solid #004080;
+      border-radius: 36px;
+      cursor: pointer;
+      text-align: left;
+      background: #fff;
+      transition: background 0.2s;
+    }
+
+    .feed-menu button:hover {
+      background: #d6e4ff;
+    }
+
+    .feed-menu button.active {
+      background: #004080;
+      color: white;
+      font-weight: bold;
+    }
+
+
+.credits {
+    font-size: 10pt;
+    font-weight: 100;
+    text-align: left; 
+    
+    
+    
+}
+
+.credits a {
+    color: #666;
+    text-decoration: none;
+   
+}
+
+.credits a:hover {
+    color: #004080;
+    text-decoration: none;
+}
+
+#c01 {
+  margin-top: 50px;
+}
+
+
+    /* Mittlere Spalte: Headlines */
+/* Container über der Feed-Liste */
+#feed-header {
+  display: flex;
+  justify-content: center; /* Logo mittig */
+  align-items: center;
+  padding: 10px;
+  background-color: #fff; /* dezente Hinterlegung */
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  position: sticky;
+  top: 0;            /* klebt oben am Container */
+  z-index: 10;       /* sorgt dafür, dass es über den Meldungen liegt */
+}
+
+/* Logo-Bild */
+#feed-logo {
+  max-width: 100px;
+  max-height: 50px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #fff;
+  padding: 4px;
+}
+
+    .feed-list {
+      flex: 1;
+      border-right: 1px solid #ccc;
+      overflow-y: auto;
+      background: #ffffff;
+    }
+
+    .feed-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .feed-list li {
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .feed-list li:hover {
+      background: #f0f8ff;
+    }
+
+    .feed-list li.active {
+      background: #004080;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Rechte Spalte: Details */
+    .feed-details {
+      flex: 2;
+      padding: 20px;
+      overflow-y: auto;
+      background: #fafafa;
+    }
+
+.feed-details a{
+    text-decoration: none;
+    color: black;
+}
+
+    .placeholder {
+      color: #666;
+      font-style: italic;
+    }
+
+.text-box {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 7px;
+    border: 0.5px solid #004080;
+    float: left;
+}
+
+
+/*Dokumentation */
+
+.containerDoc {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+.containerDoc img {
+  width: 40vw;
+  margin-top: 50px;
+  margin-right: 2vw;
+  border-radius: 7px;
+  border: 1px solid #004080;
+}
+
+.containerBox  {
+  margin-top: 50px;
+  margin-left: 2vw;
+
+  width: 48vw;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 7px;
+    border: 1px solid #004080;
+  
+}
+
+.containerBox a {
+  text-decoration: none;
+  color: #004080;
+}
+
+#repository {
+display: flex;
+flex-direction: column;
+margin-top: 50px;
+justify-content: center;
+  align-items: center;
+width: 40vw;
+margin-right: 2vw;
+
+
+  
+}
+
+#github-icon {
+  width: 6vw;
+  border: none;
+  margin-top: 0;
+  margin-right: 0;
+}
+
+#repository p {
+  justify-self: center;
+  width: fit-content;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background-color: #ffffff;
+  border-radius: 7px;
+  border: 1px solid #004080;
+  text-align: center;
+}
+
+#repository p:hover {
+  background-color: #d6e4ff;
+}
+
+#repository a {
+  text-decoration: none;
+  color: black;
+}
+
+ .footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    gap: 50px;
+    padding-left: 2vw;
+   background: #f8f9fa;
+     border-top: 1px solid #ccc;
+   bottom: 0;
+   
+  }
+
+.footer p {
+  font-size: smaller;
+}
+
+.footer a {
+    color: #666;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #004080;
+    text-decoration: none;
+} 
+
+
+/*Mobile Devices*/
+@media only screen and (max-width: 912px) {
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  background: #f8f9fa;
+  padding-bottom: 50px;
+}
+
+#header {
+ 
+  padding: 10px 0 20px 0;
+  background-color: #f8f9fa;
+  border-bottom: 5px solid #004080;
+  display: block;
+}
+
+#header-logo  {
+  height: 80px;
+  margin: auto;
+  display: block;
+  position: relative;
+  left: 0;
+}
+
+#header-text {
+  margin-top: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  padding: 10px 0;
+  color: black;
+}
+
+h3 {
+  margin: 0;
+  color: black;
+  font-weight: 200;
+}
+
+  #container {
+    display: block !important;
+    height: auto;
+  }
+
+  .containerBox {
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 80vw;
+    text-align: center;
+  }
+
+ 
+  .containerDoc img{
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 84vw;
+    float: none;
+   
+  }
+  
+  #repository {
+  display: block;
+    width: 100vw;
+  margin: 0 auto;
+ margin-top: 50px;
+margin-right: 0;
+margin-left:0;
+float: none;
+text-align: center;
+  
+}
+
+#github-icon {
+  display: block;
+  width: 20vw;
+  border: none;
+
+  margin-right: 0;
+  margin-left: 0;
+  margin: 0 auto;
+  right: unset;
+  
+  
+}
+
+#repository p {
+  margin-top: 50px;
+  width: fit-content;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background-color: #ffffff;
+  display: inline-block;
+  border-radius: 7px;
+  border: 1px solid #004080;
+  text-align: center;
+}
+
+#repository p:hover {
+  background-color: #d6e4ff;
+}
+
+#repository a {
+  text-decoration: none;
+  color: black;
+}
+  
+  .feed-menu {
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    padding: 10px 5px;
+  }
+
+  .feed-menu h2 {
+    display: none;
+  }
+
+  .feed-menu button {
+    display: inline-block;
+    margin: 5px;
+    font-size: 0.9rem;
+  }
+
+  .menu-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background: #f8f9fa;   /* gleiche Hintergrundfarbe wie Seite */
+    border-top: 1px solid #ccc;
+    padding: 8px 0;
+    z-index: 1000;
+  }
+
+  .menu-footer .credits {
+    margin: 0;
+    font-size: 0.85rem;
+    display: inline-block; /* verhindert Blocksprung */
+    white-space: nowrap;   /* kein Umbruch innerhalb */
+  }
+  
+  #c01 {
+    margin-top: 0;
+  }
+
+
+  .feed-list {
+    border-right: none;
+    overflow-y: visible;
+  }
+
+  .feed-list li {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .feed-details {
+    display: none; /* rechte Spalte wird ausgeblendet */
+  }
+  
+  .footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 15px;
+    padding-left: 2vw;
+   background: #f8f9fa;
+     border-top: 1px solid #ccc;
+  }
+
+  /* Dynamische Dropdown-Box */
+  .feed-list li .dropdown-details {
+    margin-top: 5px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #004080;
+    border-radius: 6px;
+    font-size: 0.9rem;
+  }
+
+  .feed-list li.active {
+    background: #f0f8ff;
+    color: #000;
+  }
+}
+/* Mobile Dropdown unter Listeneintrag */
+.dropdown-details {
+  background: #fff;
+  border: 1px solid #004080;
+  border-radius: 8px;
+  padding: 0 10px;       /* Anfang: kein vertikales Padding */
+  margin-top: 8px;
+  font-size: 0.9rem;
+  max-height: 0;         /* Anfang: unsichtbar */
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* aktive Version */
+.dropdown-details.show {
+  max-height: 500px;     /* ausreichend groß für Inhalt */
+  padding: 10px;         /* jetzt volles Padding */
+  opacity: 1;
+}
+
+.dropdown-details h3 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+.dropdown-details p {
+  font-weight: lighter;
+}
+
+.dropdown-details a {
+  text-decoration: none;
+  color: #004080;
+}
+
+.dropdown-details .pubdate {
+  font-size: 0.8rem;
+  color: #666;
+}

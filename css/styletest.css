@@ -1,0 +1,299 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  background: #f8f9fa;
+}
+
+/* Header */
+#header {
+  padding: 10px 0 20px 0;
+  background-color: #f8f9fa;
+  border-bottom: 5px solid #004080;
+  display: flex;
+  align-items: center;   
+  justify-content: center; 
+  position: relative;    
+}
+
+#header-logo {
+  height: 80px;
+  position: absolute;
+  top: 10px;
+  left: 10px; 
+}
+
+#header-text {
+  text-align: center;
+}
+
+h1, h3 {
+  margin: 0;
+  color: black;
+}
+
+h3 {
+  font-weight: 200;
+}
+
+#container {
+  display: flex;
+  height: calc(100vh - 115px);
+}
+
+/* Feed-Menü */
+.feed-menu {
+  flex: 0 0 200px;
+  border-right: 1px solid #ccc;
+  background: #fafafa;
+  padding: 10px;
+}
+
+.feed-menu h2 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.feed-menu button {
+  display: block;
+  width: fit-content;
+  padding: 5px 10px;
+  margin-bottom: 8px;
+  border: 0.5px solid #004080;
+  border-radius: 36px;
+  cursor: pointer;
+  background: #fff;
+  transition: background 0.2s;
+}
+
+.feed-menu button:hover {
+  background: #d6e4ff;
+}
+
+.feed-menu button.active {
+  background: #004080;
+  color: white;
+  font-weight: bold;
+}
+
+.credits {
+  font-size: 10pt;
+  font-weight: 100;
+  text-align: left; 
+}
+
+.credits a {
+  color: #666;
+  text-decoration: none;
+}
+
+.credits a:hover {
+  color: #004080;
+}
+
+/* Feed Header mit Logo */
+#feed-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#feed-logo {
+  max-width: 100px;
+  max-height: 50px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #fff;
+  padding: 4px;
+}
+
+/* Feed-Liste */
+.feed-list {
+  flex: 1;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+  background: #ffffff;
+}
+
+.feed-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feed-list li {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.feed-list li:hover {
+  background: #f0f8ff;
+}
+
+.feed-list li.active {
+  background: #004080;
+  color: white;
+  font-weight: bold;
+}
+
+/* Details */
+.feed-details {
+  flex: 2;
+  padding: 20px;
+  overflow-y: auto;
+  background: #fafafa;
+}
+
+.feed-details a {
+  text-decoration: none;
+  color: black;
+}
+
+.placeholder {
+  color: #666;
+  font-style: italic;
+}
+
+.text-box {
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 7px;
+  border: 0.5px solid #004080;
+}
+
+/* --- Responsive Anpassungen --- */
+@media (max-width: 912px) {
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  background: #f8f9fa;
+}
+
+#header {
+ 
+  padding: 10px 0 20px 0;
+  background-color: #f8f9fa;
+  border-bottom: 5px solid #004080;
+  display: block;
+}
+
+#header-logo  {
+  height: 80px;
+  margin: auto;
+  display: block;
+  position: relative;
+  left: 0;
+}
+
+#header-text {
+  margin-top: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  padding: 10px 0;
+  color: black;
+}
+
+h3 {
+  margin: 0;
+  color: black;
+  font-weight: 200;
+}
+
+  #container {
+    display: block;
+    height: auto;
+  }
+
+  .feed-menu {
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    padding: 10px 5px;
+  }
+
+  .feed-menu h2 {
+    display: none;
+  }
+
+  .feed-menu button {
+    display: inline-block;
+    margin: 5px;
+    font-size: 0.9rem;
+  }
+
+  .menu-footer {
+    display: none;
+  }
+
+  .feed-list {
+    border-right: none;
+    overflow-y: visible;
+  }
+
+  .feed-list li {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .feed-details {
+    display: none; /* rechte Spalte wird ausgeblendet */
+  }
+
+  /* Dynamische Dropdown-Box */
+  .feed-list li .dropdown-details {
+    margin-top: 5px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #004080;
+    border-radius: 6px;
+    font-size: 0.9rem;
+  }
+
+  .feed-list li.active {
+    background: #f0f8ff;
+    color: #000;
+  }
+}
+/* Mobile Dropdown unter Listeneintrag */
+.dropdown-details {
+  background: #fff;
+  border: 1px solid #004080;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.dropdown-details h3 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+.dropdown-details a {
+  text-decoration: none;
+  color: #004080;
+}
+
+.feed-list li.active p  {
+    font-weight: lighter;
+}
+
+.dropdown-details .pubdate {
+  font-size: 0.8rem;
+  color: #666;
+}
+

@@ -84,13 +84,54 @@ function renderListItem(title, description, pubDate, link) {
   return li;
 }
 
+async function fetchSat1Article(articleUrl) {
+  try {
+    const res = await fetch(
+      proxyBase + encodeURIComponent(articleUrl)
+    );
+
+    if (!res.ok) return null;
+
+    const html = await res.text();
+
+    const doc = new DOMParser().parseFromString(
+      html,
+      "text/html"
+    );
+
+    const article = doc.querySelector(
+      '[data-block-type="articleStoryBlock"]'
+    );
+
+    if (!article) return null;
+
+    const paragraphs = Array.from(
+      article.querySelectorAll("p")
+    )
+      .map(p => p.textContent.trim())
+      .filter(Boolean);
+
+    if (paragraphs.length < 2) return null;
+
+    return {
+      sourceLine: paragraphs[0],
+      description: paragraphs[1]
+    };
+
+  } catch (err) {
+    console.error("Sat1 Artikel Fehler:", err);
+    return null;
+  }
+}
+
 // 🔹 Dein Node.js-Server (z. B. Render, Railway, etc.)
-const proxyBase = " https://nachrichtentisch-proxy.kawei.workers.dev/?url=";
+const proxyBase = "https://nachrichtentisch-proxy.kawei.workers.dev/?url=";
 
 async function loadFeed(feedUrl) {
   const isHaz = feedUrl.includes("haz.de");
   const isFahrgastfernsehen = feedUrl.includes("api.fahrgastfernsehen.online");
   const isRadioHannover = feedUrl.includes("radio-hannover.de");
+  const isSat1 = feedUrl.includes("sat1regional.de")
 
   updateLogo(feedUrl);
 
@@ -106,6 +147,12 @@ async function loadFeed(feedUrl) {
 
     const contentType = response.headers.get("content-type") || "";
     const textContent = await response.text();
+    if (isSat1) {
+  console.log("tickerItem:", textContent.includes("tickerItem"));
+  console.log("articleStoryBlock:", textContent.includes("articleStoryBlock"));
+  console.log("server-fn:", textContent.includes("server-fn"));
+  console.log("articleQuery:", textContent.includes("articleQuery"));
+}
 
     // 🔹 Radio Hannover
     if (isRadioHannover) {
@@ -122,6 +169,59 @@ async function loadFeed(feedUrl) {
       });
       return;
     }
+    
+    // 🔹 Sat1 Regional
+if (isSat1) {
+
+  const apiUrl =
+  "https://cms.sat1regional.de/api/articles" +
+  "?limit=20" +
+  "&sort=-publishedAt" +
+  "&where[tenant.slug][equals]=sat1-regional" +
+  "&where[articleType][equals]=ticker" +
+  "&where[regions.slug][in]=niedersachsen,bremen";
+
+  const response = await fetch(
+    proxyBase + encodeURIComponent(apiUrl)
+  );
+
+  const data = await response.json();
+
+  let articles = data.docs || [];
+
+
+  articles = articles.slice(0, 10);
+
+  list.innerHTML = "";
+
+  articles.forEach(article => {
+
+    const title =
+      article.title || "(ohne Titel)";
+
+    const description =
+      article.meta?.description ||
+      "Keine Beschreibung verfügbar.";
+
+    const pubDate =
+      article.publishedAt || "";
+
+    const link =
+      `https://www.sat1regional.de/artikel/${article.slug}`;
+
+    list.appendChild(
+      renderListItem(
+        title,
+        description,
+        pubDate,
+        link
+      )
+    );
+
+  });
+
+  return;
+}
 
     // 🔹 Fahrgastfernsehen
     if (isFahrgastfernsehen) {
@@ -189,6 +289,8 @@ feedButtons.forEach(btn => {
     loadFeed(btn.dataset.feed);
   });
 });
+
+
 
 // Standard-Feed laden
 loadFeed(feedButtons[0].dataset.feed);
